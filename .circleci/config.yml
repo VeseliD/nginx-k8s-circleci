@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: circleci/buildpack-deps:stretch
     environment:
-      IMAGE_NAME: veselidrago/nginx-k8s-circle
+      IMAGE_NAME: veselidrago/nginx-k8s-circleci
     working_directory: ~/app
     steps:
       - checkout

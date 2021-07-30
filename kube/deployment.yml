@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: nginx-k8s-circleci
-          image: veselidrago/nginx-k8s-circleci:latest
+          image: veselidrago/nginx-k8s-circleci:$COMMIT_SHA1
           ports:
             - containerPort: 80
               name: http
