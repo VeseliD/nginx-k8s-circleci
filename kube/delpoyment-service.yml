@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-k8s-circleci
+  namespace: default
+  labels:
+    app: nginx-k8s-circleci
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      name: http
+  selector:
+    app: nginx-k8s-circleci

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-k8s-circleci
+  namespace: default
+  labels:
+    app: nginx-k8s-circleci
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-k8s-circleci
+  template:
+    metadata:
+      labels:
+        app: nginx-k8s-circleci
+    spec:
+      containers:
+        - name: nginx-k8s-circleci
+          image: veselidrago/nginx-k8s-circleci:latest
+          ports:
+            - containerPort: 80
+              name: http
