@@ -12,8 +12,8 @@ export COMMIT_SHA1=$COMMIT_SHA1
 #  and overwrite the original with that one.
 pwd
 ls
-envsubst <./kube/nginx-k8s-circleci.yml >./kube/nginx-k8s-circleci.yml.out
-mv ./kube/nginx-k8s-circleci.yml.out ./kube/nginx-k8s-circleci.yml
+envsubst <kube/nginx-k8s-circleci.yml >kube/nginx-k8s-circleci.yml.out
+mv kube/nginx-k8s-circleci.yml.out kube/nginx-k8s-circleci.yml
 
 echo "$KUBERNETES_CLUSTER_CERTIFICATE" | base64 --decode > cert.crt
 
